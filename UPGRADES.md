@@ -2,7 +2,7 @@
 
 When performing an upgrade on EVM contracts, the biggest risk is to introduce storage layout collisions. This may degrade a contract storage, which can do things like change token balances, change a stored address to other contract for garbage data, etc.
 
-These errors might harder to detect, even happening some time after deployment.
+These errors might be harder to detect, even happening some time after deployment.
 
 In order to prevent this:
 
@@ -39,7 +39,7 @@ a) Fix the stray absolute import path for relative ones.
 b) Flatten everything into a file. You can flatten the files with
 
 ```jsx
-forge flatten contracts/old/v1.0.0/contracts/modules/dispute/DisputeModule.sol > contracts/old/DisputeModule.sol
+forge flatten contracts/old/v1.0.0/contracts/modules/dispute/DisputeModule.sol --output contracts/old/DisputeModule.sol
 ```
 
 then you can use the VSCode extension [Combine Code in Folder](https://marketplace.visualstudio.com/items?itemName=ToanBui.combine-code-in-folder) and manual labor.
